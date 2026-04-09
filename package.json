@@ -1,5 +1,6 @@
 {
   "name": "angular-component-binds",
+  "publisher": "rubenalarcongalvez",
   "displayName": "Angular Component Binds",
   "description": "Create Angular components and extract inline templates and styles",
   "version": "1.0.0",
