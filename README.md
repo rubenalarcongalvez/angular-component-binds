@@ -2,8 +2,9 @@
 
 VS Code extension to create Angular entities and manage component files quickly.
 
-[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Support-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/rubenalarcongalvez)
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S619M4ED)
+Support:
+- GitHub Sponsors: https://github.com/sponsors/rubenalarcongalvez
+- Ko-fi: https://ko-fi.com/S6S619M4ED
 
 ## Commands
 

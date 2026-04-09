@@ -3,6 +3,11 @@
   "displayName": "Angular Component Binds",
   "description": "Create Angular components and extract inline templates and styles",
   "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rubenalarcongalvez/angular-component-binds"
+  },
   "sponsor": {
     "url": "https://github.com/sponsors/rubenalarcongalvez"
   },
