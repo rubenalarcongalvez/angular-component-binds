@@ -2,7 +2,7 @@
   "name": "angular-component-binds",
   "displayName": "Angular Component Binds",
   "description": "Create Angular components and extract inline templates and styles",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
