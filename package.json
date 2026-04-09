@@ -3,7 +3,8 @@
   "publisher": "rubenalarcongalvez",
   "displayName": "Angular Component Binds",
   "description": "Create Angular components and extract inline templates and styles",
-  "version": "1.0.0",
+  "icon": "images/logo.png",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -27,10 +28,6 @@
   },
   "categories": [
     "Other"
-  ],
-  "activationEvents": [
-    "onCommand:extension.createAngularComponent",
-    "onCommand:extension.extractInlineTemplate"
   ],
   "main": "./out/extension.js",
   "contributes": {
