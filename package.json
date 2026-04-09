@@ -1,0 +1,89 @@
+{
+  "name": "angular-component-binds",
+  "displayName": "Angular Component Binds",
+  "description": "Create Angular components and extract inline templates and styles",
+  "version": "0.0.1",
+  "sponsor": {
+    "url": "https://github.com/sponsors/rubenalarcongalvez"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/rubenalarcongalvez"
+    },
+    {
+      "type": "ko-fi",
+      "url": "https://ko-fi.com/S6S619M4ED"
+    }
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createAngularComponent",
+    "onCommand:extension.extractInlineTemplate"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createAngularComponent",
+        "title": "Angular: Create Entity here…"
+      },
+      {
+        "command": "extension.extractInlineTemplate",
+        "title": "Angular: Manage Component Files…"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.createAngularComponent",
+          "when": "explorerResourceIsFolder",
+          "group": "2_workspace@100"
+        },
+        {
+          "command": "extension.extractInlineTemplate",
+          "when": "resourceFilename =~ /\\.component\\.ts$/ && !explorerResourceIsFolder",
+          "group": "2_workspace@101"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "extension.createAngularComponent",
+        "key": "ctrl+shift+a c",
+        "mac": "cmd+shift+a c"
+      },
+      {
+        "command": "extension.extractInlineTemplate",
+        "key": "ctrl+shift+a m",
+        "mac": "cmd+shift+a m",
+        "when": "editorTextFocus && resourceExtname == .ts"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./",
+    "compile": "npm run test-compile && npm run esbuild",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "esbuild": "^0.19.0",
+    "eslint": "^8.50.0",
+    "typescript": "^5.2.0"
+  }
+}
