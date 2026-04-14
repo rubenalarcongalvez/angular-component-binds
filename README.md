@@ -2,9 +2,7 @@
 
 VS Code extension to create Angular entities and manage component files quickly.
 
-Support:
-- GitHub Sponsors: https://github.com/sponsors/rubenalarcongalvez
-- Ko-fi: https://ko-fi.com/S6S619M4ED
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=github)](https://github.com/sponsors/rubenalarcongalvez) [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/S6S619M4ED)
 
 ## Commands
 
@@ -26,8 +24,9 @@ Supported entities:
 Flow:
 
 1. Select entity type
-2. Enter name (kebab-case)
-3. Select destination folder from a searchable project folder picker
+2. Select destination folder from a searchable project folder picker
+3. Enter name (kebab-case)
+   1. It could be by creating other folders like "folder/my-name" or just creating the component like "my-"
 4. Choose Flat or In subfolder (for Component and Module)
 
 Notes:

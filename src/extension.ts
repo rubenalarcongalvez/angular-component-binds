@@ -181,19 +181,7 @@ export function activate(context: vscode.ExtensionContext) {
 					return;
 				}
 
-				// 2. Get the name
-				const name = await vscode.window.showInputBox({
-					prompt: `Enter ${entityType.label} name`,
-					placeHolder: 'e.g.: my-name',
-					validateInput: (value) => {
-						if (!value) { return 'Name cannot be empty'; }
-						if (!/^[a-z0-9-]+$/.test(value)) { return 'Use only lowercase letters, numbers, and hyphens'; }
-						return null;
-					}
-				});
-				if (!name) { return; }
-
-				// 3. Pick destination folder
+				// 2. Pick destination folder
 				// If invoked from Explorer context menu on a folder, use that folder directly.
 				// Otherwise show the searchable folder picker.
 				let destFolder: string | undefined;
@@ -206,6 +194,17 @@ export function activate(context: vscode.ExtensionContext) {
 
 				// Compute path relative to workspace root (forward slashes for ng)
 				const relDest = path.relative(wsFolder, destFolder).replace(/\\/g, '/') || '.';
+
+				// 3. Get the name (subfolder if so)
+				const name = await vscode.window.showInputBox({
+					prompt: `Enter ${entityType.label} name`,
+					placeHolder: 'e.g.: folder/my-name or my-name',
+					validateInput: (value) => {
+						if (!value) { return 'Name cannot be empty'; }
+						return null;
+					}
+				});
+				if (!name) { return; }
 
 				// 4. Flat or subfolder? (only relevant for component and module which create subdirs)
 				let flat = false;
